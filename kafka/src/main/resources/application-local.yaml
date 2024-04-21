@@ -1,0 +1,12 @@
+springdoc:
+  swagger-ui:
+    enabled: true
+  api-docs:
+    enabled: true
+  packagesToScan: com.example.kafka.web.controller
+
+server:
+  port: 8084
+  servlet:
+    context-path: /kafka/api/
+

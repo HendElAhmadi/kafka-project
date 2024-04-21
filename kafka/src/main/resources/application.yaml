@@ -1,0 +1,31 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.ByteArraySerializer
+    consumer:
+      group-id: my-consumer-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+
+server:
+  port: 8084
+  servlet:
+    context-path: /kafka/api/
+
+app:
+  jwt:
+    secret: JWTSuperLibrarySecret
+    expirationInMs: 3600000
+
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+  packagesToScan: com.example.kafka.web.controller
+
+credentials:
+  username: Admin
+  password: Admin#$1254
